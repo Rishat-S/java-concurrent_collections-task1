@@ -20,9 +20,7 @@ public class Main {
         specialist2.start();
         specialist3.start();
 
-        while (pbx.isAlive() && calls.isEmpty());
-
-        System.out.println(calls.size());
+        while (pbx.isAlive());
 
         spec1.stopThread();
         spec2.stopThread();
