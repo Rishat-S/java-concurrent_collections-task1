@@ -23,7 +23,7 @@ public class Specialist implements Runnable {
             if (calls.isEmpty()) {
                 continue;
             }
-            System.out.println(Thread.currentThread().getName() + " received a call" + calls.poll());
+            System.out.println(Thread.currentThread().getName() + " handles the call - " + calls.poll());
             try {
                 TimeUnit.SECONDS.sleep(CALL_IS_IN_PROGRESS);
             } catch (InterruptedException e) {
