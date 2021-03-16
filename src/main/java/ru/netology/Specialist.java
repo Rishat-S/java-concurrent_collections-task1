@@ -4,7 +4,7 @@ import java.util.Queue;
 import java.util.concurrent.TimeUnit;
 
 public class Specialist implements Runnable {
-    public static final int CALL_IS_IN_PROGRESS = 5;
+    public static final int CALL_IS_IN_PROGRESS = 2;
     private boolean isRun;
     private final Queue<Call> calls;
 

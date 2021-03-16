@@ -4,8 +4,8 @@ import java.util.Queue;
 import java.util.concurrent.TimeUnit;
 
 public class PBX implements Runnable {
-    public static final int PAUSE_IN_CALLS = 6;
-    private static final int CALLS_NUM = 6;
+    public static final int PAUSE_IN_CALLS = 1;
+    private static final int CALLS_NUM = 60;
     public static final int NUM_OF_CALLS_WAVES = 2;
     private final Queue<Call> calls;
 
@@ -16,7 +16,7 @@ public class PBX implements Runnable {
     @Override
     public void run() {
         for (int i = 0; i < NUM_OF_CALLS_WAVES; i++) {
-            System.out.println(Thread.currentThread().getName() + " generate calls");
+            System.out.println(Thread.currentThread().getName() + ": Calls from subscribers were received");
             for (int j = 0; j < CALLS_NUM; j++) {
                 calls.offer(new Call());
             }
