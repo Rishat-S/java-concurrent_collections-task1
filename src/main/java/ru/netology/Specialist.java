@@ -20,10 +20,11 @@ public class Specialist implements Runnable {
     @Override
     public void run() {
         while (isRun || !calls.isEmpty()) {
-            if (calls.isEmpty()) {
+            Call call = calls.poll();
+            if (call == null) {
                 continue;
             }
-            System.out.println(Thread.currentThread().getName() + " handles the call - " + calls.poll());
+            System.out.println(Thread.currentThread().getName() + " handles the call - " + call);
             try {
                 TimeUnit.SECONDS.sleep(CALL_IS_IN_PROGRESS);
             } catch (InterruptedException e) {

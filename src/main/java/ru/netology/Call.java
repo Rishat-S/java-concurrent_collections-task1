@@ -1,11 +1,12 @@
 package ru.netology;
 
+import java.util.UUID;
+
 public class Call {
-    private static int count = 0;
-    private final int id;
+    private final UUID id;
 
     public Call() {
-        id = ++count;
+        this.id = UUID.randomUUID();
     }
 
     @Override
